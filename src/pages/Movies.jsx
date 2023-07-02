@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 import ListMovies from '../components/ListMovies/ListMovies';
 import { getMovies } from '../Util/api';
 
 const Movies = () => {
   const [movies, setMovies] = useState(null);
-
   const [query, setQuery] = useSearchParams();
 
   useEffect(() => {
@@ -21,21 +19,22 @@ const Movies = () => {
 
   function onSearch(e) {
     e.preventDefault();
-    setQuery('query', e.currentTarget.elements.q.value);
+    setQuery({
+      query: e.currentTarget.elements.q.value,
+    });
     e.currentTarget.reset();
   }
 
   return (
     <form onSubmit={onSearch}>
-      <h2>Movies</h2>
+      <div>Movies</div>
       <label>
-        Search:
         <input name="q" type="text" />
       </label>
       <button type="submit">Search</button>
       {movies?.length > 0 && (
         <>
-          <h2>List of Movies</h2>
+          <h2>List movies</h2>
           <ListMovies list={movies} />
         </>
       )}

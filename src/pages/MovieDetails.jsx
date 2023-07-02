@@ -24,41 +24,40 @@ function MovieDetails() {
     getDetails(id).then(setDetails);
   }, [id]);
 
-  if (!details) {
-    return <p>Movie not found</p>;
-  }
-
-  return (
+  return !details ? (
+    <p>Don't find this movies</p>
+  ) : (
     <Details>
       <p>
         <Link to={comeBack.current}>Go back</Link>
       </p>
-      <div className="card">
-        <Poster width={200} url={poster_path} alt={name} />
+      <article className="card">
+        <Poster width={200} url={poster_path} alt={name}></Poster>
         <div className="subscribe">
           <h2>
             {original_title}
             <span> ({release_date.substring(0, 4)})</span>
           </h2>
           <h3>
-            Genres:
+            Genries:
             <span> {genres.map(({ name }) => name).join(', ')}</span>
           </h3>
+
           <h3>Overview:</h3>
           <p>{overview}</p>
         </div>
-      </div>
+      </article>
       <hr />
       <p>Additional information:</p>
       <ul>
         <li>
-          <Link to={`cast`}>Cast</Link>
+          <Link to={'cast'}>Cast</Link>
         </li>
         <li>
-          <Link to={`reviews`}>Reviews</Link>
+          <Link to={'reviews'}>Reviews</Link>
         </li>
       </ul>
-      <Suspense fallback={<p>Loading...</p>}>
+      <Suspense>
         <Outlet />
       </Suspense>
     </Details>

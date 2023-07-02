@@ -9,16 +9,16 @@ export const Details = styled.div`
 
   h2 {
     margin: 0;
-    font-size: 18px;
+    font-size: 1.5rem;
     span {
-      font-size: 16px;
+      font-size: 1.3rem;
     }
   }
   h3 {
     margin: 30px 0 0;
-    font-size: 18px;
+    font-size: 1.3rem;
     span {
-      font-size: 16px;
+      font-size: 1.1rem;
       font-weight: 300;
       font-style: italic;
     }

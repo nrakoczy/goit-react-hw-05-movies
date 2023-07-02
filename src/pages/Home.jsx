@@ -12,10 +12,10 @@ function Home() {
   }, []);
 
   return (
-    <div>
-      <h2>Today's Trends</h2>
-      {trendes ? <ListMovies list={trendes} /> : <p>Loading trends...</p>}
-    </div>
+    <>
+      <h2>Trading today</h2>
+      <ListMovies list={trendes} />
+    </>
   );
 }
 

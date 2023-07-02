@@ -1,4 +1,4 @@
-import portrait from '../portrait.jpeg';
+import portrait from '../actor.jpg';
 const BASE_POSTER = 'https://image.tmdb.org/t/p/w500';
 
 function Poster({ url, alt, width }) {

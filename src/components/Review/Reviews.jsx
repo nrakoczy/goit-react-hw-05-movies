@@ -1,6 +1,5 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-
 import { ReviewStyled } from './Reviews.styled';
 import PropTypes from 'prop-types';
 import { getReview } from '../../Util/api';
@@ -17,12 +16,13 @@ function Reviews() {
       <h3>Reviews:</h3>
       <ul>
         {review?.length === 0 ? (
-          <p>We don't have any reviews for this movie</p>
+          <p>We don't have any reviews for this movies</p>
         ) : (
           review?.map(({ author, content, id }) => (
             <li key={id}>
               <h3>Author: {author}</h3>
-              <p>Content: {content}</p>
+              <p> {content}</p>
+
               <br />
               <br />
             </li>
