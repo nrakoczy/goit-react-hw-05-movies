@@ -7,13 +7,11 @@ import { getMovies } from '../Util/api';
 
 const Movies = () => {
   const [movies, setMovies] = useState(null);
-  // const [word, setWord] = useState('');
 
   const [query, setQuery] = useSearchParams();
 
   useEffect(() => {
     const strQuery = query.get('query');
-    // setWord(strQuery ?? '');
     if (strQuery) getMovies(strQuery).then(setMovies);
     if (!strQuery) {
       setMovies(null);
@@ -28,11 +26,8 @@ const Movies = () => {
     });
     e.currentTarget.reset();
 
-    // getMovies(word).then(setMovies).then(setWord(''));
+
   }
-  // function onChange({ target }) {
-  //   setWord(target.value);
-  // }
 
   return (
     <form onSubmit={onSearch}>

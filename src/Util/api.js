@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const BASE = 'https://api.themoviedb.org/3/';
-const KEY = '?api_key=66413c0c73bd8d6f9d602d8ba291e1c5';
+const KEY = '?api_key=8f455d5cb8a7e332c22f1cfc662cfba1';
 const LANG = '&language=en-US';
 
 export async function getTrends() {

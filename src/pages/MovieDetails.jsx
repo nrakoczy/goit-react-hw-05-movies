@@ -26,14 +26,12 @@ function MovieDetails() {
     getDetails(id).then(setDetails);
   }, [id]);
 
-  //   const { poster_path, name, genres, overview, release_date } = details;
 
   return !details ? (
     <p>Don't find this movies</p>
   ) : (
     <Details>
       <p>
-        {/* link to back */}
         <Link to={comeBack.current}>Go back</Link>
       </p>
       <article className="card">
@@ -47,11 +45,7 @@ function MovieDetails() {
             Genries:
             <span> {genres.map(({ name }) => name).join(', ')}</span>
           </h3>
-          {/* <p>
-              {genres?.map(({ id, name }) => (
-                <li key={id}>{name}</li>
-              ))}
-            </p> */}
+
           <h3>Overview:</h3>
           <p>{overview}</p>
         </div>
