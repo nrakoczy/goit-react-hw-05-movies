@@ -21,24 +21,21 @@ const Movies = () => {
 
   function onSearch(e) {
     e.preventDefault();
-    setQuery({
-      query: e.currentTarget.elements.q.value,
-    });
+    setQuery('query', e.currentTarget.elements.q.value);
     e.currentTarget.reset();
-
-
   }
 
   return (
     <form onSubmit={onSearch}>
-      <div>Movies</div>
+      <h2>Movies</h2>
       <label>
+        Search:
         <input name="q" type="text" />
       </label>
       <button type="submit">Search</button>
       {movies?.length > 0 && (
         <>
-          <h2>List movies</h2>
+          <h2>List of Movies</h2>
           <ListMovies list={movies} />
         </>
       )}

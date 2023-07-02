@@ -1,6 +1,5 @@
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
-
 import { Wrap, NavLinkStyled } from './Layout.styled';
 
 function Layout() {

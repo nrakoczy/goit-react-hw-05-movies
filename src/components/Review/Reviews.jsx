@@ -17,13 +17,12 @@ function Reviews() {
       <h3>Reviews:</h3>
       <ul>
         {review?.length === 0 ? (
-          <p>We don't have any reviews for this movies</p>
+          <p>We don't have any reviews for this movie</p>
         ) : (
           review?.map(({ author, content, id }) => (
             <li key={id}>
               <h3>Author: {author}</h3>
-              <p> {content}</p>
-
+              <p>Content: {content}</p>
               <br />
               <br />
             </li>

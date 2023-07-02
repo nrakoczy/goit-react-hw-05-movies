@@ -12,14 +12,15 @@ function Home() {
   }, []);
 
   return (
-    <>
-      <h2>Trading today</h2>
-      <ListMovies list={trendes} />
-    </>
+    <div>
+      <h2>Today's Trends</h2>
+      {trendes ? <ListMovies list={trendes} /> : <p>Loading trends...</p>}
+    </div>
   );
 }
 
 Home.propTypes = {
   list: PropTypes.arrayOf(PropTypes.object),
 };
+
 export default Home;
